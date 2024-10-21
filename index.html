@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Bunga dan Anuitas 💵</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-25 col-lg-30"> <!-- Lebar kolom diperbesar untuk tampilan laptop -->
+                <div class="card shadow p-4">
+                    <h1 class="text-center mb-4">Kalkulator Bunga dan Anuitas 💵</h1>
+                    <form id="calculatorForm">
+                        <div class="mb-3">
+                            <label for="principal" class="form-label">Nilai Pokok:</label>
+                            <input type="number" id="principal" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="rate" class="form-label">Suku Bunga (%) per Tahun:</label>
+                            <input type="number" id="rate" class="form-control" step="0.01" min="1" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="time" class="form-label">Jangka Waktu (Tahun):</label>
+                            <input type="number" id="time" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="frequency" class="form-label">Jangka Waktu Dalam:</label>
+                            <select id="frequency" class="form-select">
+                                <option value="1">Tahunan (1)</option>
+                                <option value="3">Triwulan (3)</option>
+                                <option value="12">Bulanan (12)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Pilih Jenis Perhitungan:</label>
+                            <select id="type" class="form-select" required>
+                                <option value="simple">Bunga Tunggal</option>
+                                <option value="compound">Bunga Majemuk</option>
+                                <option value="annuity">Anuitas</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Hitung</button>
+                    </form>
+
+                    <div class="result mt-4">
+                        <h3 id="bungaResult"></h3>
+                        <h2 id="hasilResult"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculate.js"></script>
+</body>
+
+</html>
